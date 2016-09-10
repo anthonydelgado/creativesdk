@@ -1,0 +1,22 @@
+{
+  "name": "creativesdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonydelgado/creativesdk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthonydelgado/creativesdk/issues"
+  },
+  "homepage": "https://github.com/anthonydelgado/creativesdk#readme",
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
