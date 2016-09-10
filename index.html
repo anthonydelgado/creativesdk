@@ -1,1 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Editor</title>
+</head>
+<body>
+<!-- Load Feather code -->
+<script type="text/javascript" src="http://feather.aviary.com/imaging/v3/editor.js"></script>
 
+<!-- Instantiate Feather -->
+<script type='text/javascript'>
+    var featherEditor = new Aviary.Feather({
+        apiKey: 'your-client-id-here',
+        theme: 'dark', // Check out our new 'light' and 'dark' themes!
+        tools: 'all',
+        appendTo: '',
+        onSave: function(imageID, newURL) {
+            var img = document.getElementById(imageID);
+            img.src = newURL;
+        },
+        onError: function(errorObj) {
+            alert(errorObj.message);
+        }
+    });
+    function launchEditor(id, src) {
+        featherEditor.launch({
+            image: id,
+            url: src
+        });
+        return false;
+    }
+</script>
+
+<div id='injection_site'></div>
+
+<img id='image1' src='images/spicegirls.jpg'/>
+
+<!-- Add an edit button, passing the HTML id of the image and the public URL of the image -->
+<p><input type='image' src='http://images.aviary.com/images/edit-photo.png' value='Edit photo' onclick="return launchEditor('image1', 'images/spicegirls.jpg');" /></p>
+</body>
+</html>
